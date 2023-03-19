@@ -1,0 +1,17 @@
+127.0.0.1 - - [13/Aug/2022:09:41:31 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:50:01 +0530] "GET /CustomerDemo/studentid HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:50:07 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:50:25 +0530] "GET /CustomerDemo/studentid HTTP/1.1" 200 24
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:47 +0530] "GET /CustomerDemo/home.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:57 +0530] "GET /CustomerDemo/images/logo.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:57 +0530] "GET /CustomerDemo/images/facebook1.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:59 +0530] "GET /CustomerDemo/images/instagram.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:59 +0530] "GET /CustomerDemo/images/twitter.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:59 +0530] "GET /CustomerDemo/images/image1.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:55:59 +0530] "GET /CustomerDemo/images/linkedin.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:56:15 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:09:57:39 +0530] "GET /CustomerDemo/login.jsp HTTP/1.1" 200 5872
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:01:45 +0530] "POST /CustomerDemo/login HTTP/1.1" 500 1490
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:05:41 +0530] "POST /CustomerDemo/login HTTP/1.1" 500 1490
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:07:02 +0530] "GET /CustomerDemo/login.jsp HTTP/1.1" 200 5872
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:07:56 +0530] "POST /CustomerDemo/login HTTP/1.1" 200 6891

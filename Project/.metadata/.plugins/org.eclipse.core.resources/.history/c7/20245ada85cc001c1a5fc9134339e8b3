@@ -1,0 +1,146 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Profile</title>
+</head>
+<body>
+	
+	<div class = "center" >
+	<table>
+	<c:forEach var="cus" items="${customerDetails}">
+	
+	<c:set var = "id" value = "${cus.id}"/>
+	<c:set var = "name" value = "${cus.name}"/>
+	<c:set var = "email" value = "${cus.email}"/>
+	<c:set var = "phone" value = "${cus.phone}"/>
+	<c:set var = "nic" value = "${cus.nic}"/>
+	<c:set var = "username" value = "${cus.username}"/>
+	
+	
+	<u> <h2> My Profile </h2> </u><br><br>
+	<div align = "left"> 
+	<label> Customer ID : ${cus.id} </label>  <br><br>
+	<label> Customer Name : ${cus.id} </label> <br><br>
+	<label> Email Address : ${cus.email}</label>  <br><br>
+	<label> Mobile Number : ${cus.phone}</label> <br><br>
+	<label> NIC Number : ${cus.nic} </label> <br><br>
+	<label> User Name : ${cus.username} </label>  <br><br>
+	</div>
+	</c:forEach>
+	</table>
+	<c:url value = "updatecustomer.jsp" var = "updateprofile">
+		<c:param name = "id" value = "${id}"/>
+		<c:param name = "name" value = "${name}"/>
+		<c:param name = "email" value = "${email}"/>
+		<c:param name = "phone" value = "${phone}"/>
+		<c:param name = "nic" value = "${nic}"/>
+		<c:param name = "uname" value = "${username}"/>
+	</c:url>
+	<br> 
+	<div align = "left">
+	<a href = "changepassword.jsp" class = "text2"> <i> Change My Password </i> </a> <br> <br>
+	<a href = "${updateprofile}">
+	<input type = "button" name = "update" value = "Edit my Profile">
+	</a>
+	
+	<c:url value = "deletecustomer.jsp" var = "deleteaccount"> 
+		<c:param name = "id" value = "${id}"/>
+		<c:param name = "name" value = "${name}"/>
+		<c:param name = "email" value = "${email}"/>
+		<c:param name = "phone" value = "${phone}"/>
+		<c:param name = "nic" value = "${nic}"/>
+		<c:param name = "uname" value = "${username}"/>
+	
+	</c:url>
+	<a href = "${deleteaccount}">
+	<br>
+	<input type = "button" name = "delete" value = "Delete my Account">
+	</a> 
+	<br>
+	</div>
+	<a href = "logout.jsp" class="text1"> <div align = "center"> Log Out </div> </a> <br>
+	</div>
+	</div>
+	<style>
+	.center {
+			background-color:#d3d3d3;
+			position: relative;
+			width: 25%;
+			top:50%;
+			left: 30%;
+			padding-top: 30px;
+			padding-right: 80px;
+			padding-bottom: 30px;
+			padding-left: 150px;
+			font-weight:bold;
+		
+		}
+
+		label{
+			font-size:20px;
+			font-weight:bold;
+			grid-row:auto;
+		}
+		
+		input[type = "text"] , [type = "password"]
+		{
+			width : 50% ;
+			padding: 4px ;
+			float:right;
+			font-size:14px;
+		}
+		
+		
+		input[type = "button"] {
+		  background-color: #04AA6D;
+		  color: white;
+		  padding: 10px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  width: 50%;
+		  font-size:16px;
+		  border-radius:14px;
+		}
+		
+		.text {
+			font-size:20px;
+			color:black;
+			display:inline-block;
+			
+		}
+			
+		.text1 {
+			font-size:20px;
+			color:#02023f;
+		}
+		
+		.text2{
+			font-size:18px;
+			color:black;
+			color:#02023f;
+			
+		}
+		
+		
+		a{
+			text-decoration:none;
+			color:white;
+			font-size:18px;
+			padding: 0px 3px;
+		}
+		
+		lable{
+			float:left;
+			font-family: calibri;
+		}
+		
+		
+	</style>
+
+</body>
+</html>

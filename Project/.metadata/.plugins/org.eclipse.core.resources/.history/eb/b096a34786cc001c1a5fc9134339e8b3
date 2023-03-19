@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete my Account</title>
+</head>
+<body>
+
+	<%
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String nic = request.getParameter("nic");
+		String username = request.getParameter("uname");
+	%>
+	<div class = "center">
+	<h2 align = "center"> Delete My Account </h2> <br><br>
+	<form action = "delete" method = "post">
+		<label> Customer ID </label> <input type = "text" name = "cid" value = "<%= id%>" readonly> <br><br><br>
+		<label> Customer Name </label> <input type = "text" name = "name" value = "<%= name%>" readonly> <br><br><br>
+		<label> E-mail </label> <input type = "text" name = "email" value = "<%= email%>" readonly> <br><br><br>
+		<label> Phone Number </label> <input type = "text" name = "phone" value = "<%= phone%>" readonly> <br><br><br>
+		<label> NIC </label> <input type = "text" name = "nic" value = "<%= nic%>" readonly> <br><br><br>
+		<label> User Name </label> <input type = "text" name = "uname" value = "<%= username%>" readonly> <br><br><br>
+		<div  align = "center">
+		</div>
+	</form>
+	</div>
+</body>
+
+	<style>
+	.center {
+			background-color:#d3d3d3;
+			position: relative;
+			width: 40%;
+			top:50%;
+			left: 25%;
+			padding-top: 30px;
+			padding-right: 80px;
+			padding-bottom: 30px;
+			padding-left: 150px;
+			font-family: calibri;
+			font-weight:bold;
+		
+		}
+
+		label{
+			font-size:20px;
+			font-weight:bold;
+			grid-row:auto;
+		}
+		
+		input[type = "text"] , [type = "password"]
+		{
+			width : 50% ;
+			padding: 4px ;
+			float:right;
+			font-size:16px;
+			font-family: calibri;
+		}
+		
+		
+		input[type = "submit"] {
+		  background-color: #04AA6D;
+		  color: white;
+		  padding: 10px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  width: 30%;
+		  font-size:16px;
+		}
+		
+		.text {
+			font-size:20px;
+			color:black;
+			display:inline-block;
+			
+		}
+			
+		.text1 {
+			font-size:20px;
+			color:#02023f;
+		}
+		
+		.text2{
+			font-size:18px;
+			color:black;
+			color:#02023f;
+			padding:10px 100px;
+		}
+		
+		
+		a{
+			text-decoration:none;
+			color:white;
+			font-size:18px;
+			padding: 0px 3px;
+		}
+		
+		table{
+			font-size:18px;
+			padding:10px 30px;
+			
+		}
+		
+		.det{
+			
+			padding:10px 70px;
+			
+		}
+		
+		
+	</style>
+	
+</html>

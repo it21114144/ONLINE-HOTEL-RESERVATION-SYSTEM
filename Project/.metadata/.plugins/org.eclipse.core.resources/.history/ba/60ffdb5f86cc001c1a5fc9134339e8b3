@@ -1,0 +1,108 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Login</title>
+
+</head>
+<body>
+	<div class = "center" >
+	<form action="login" method="post">
+	<div align = "center" >
+	<br><br> <br><br>
+	<h1 align = "center"> Get Started </h1> 
+		<input type="text" name="username" placeholder="Username" required> <br> <br><br>
+		<input type="password" name="password" placeholder="Password" required> <br><br><br>
+		<a href = "forgotpassword.jsp" class = "text2"> <i> <b> Forgot Password ? </b> </i> </a> <br> <br> 
+		<input type="submit" name="submit" value="Login" > <br>
+		
+		<p class="text"> <b> Not Account Yet ? <br> <br><span> <a href="customerinsert.jsp" class="text1"> Register  </a> </span> </b> <p>
+		<hr><br>
+		<a href = "adminlogin.jsp" class="text1"> <b> Admin Login </b> </a> <br>
+		</div>
+	</form>
+	</div>
+	
+	<style>
+		body{
+			background-image:url("images/image2.jpg");
+			background-size:cover;
+			background-position:center;
+		}
+		
+		.center {
+			width:320px;
+			height:420px;
+			background:rgba(0 , 0 , 5 , 0 ,5);
+			color:#fff;
+			top:50%;
+			left:50%;
+			position:absolute;
+			transform:translate(-50% , -50%);
+			box-sizing:border-box;
+		}
+
+		label{
+			font-size:20px;
+			font-weight:bold;
+			grid-row:auto;
+		}
+		
+		input[type = "text"] , [type = "password"]
+		{
+			width : 50% ;
+			padding: 7px ;
+			float:center;
+			font-size:14px;
+			border:2px solid;
+			border-radius:16px;
+		 	text-align: center;
+		 	border-style:none;
+		}
+		
+		
+		input[type = "submit"] {
+		  background-color: #d3d3d3;
+		  color: black;
+		  padding: 10px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  font-size:16px;
+		  border-radius:12px;
+		  width: 30%;
+		  font-weight:bold;
+		
+		}
+		
+		.text {
+			font-size:20px;
+			color:black;
+			display:inline-block;
+			
+		}
+			
+		.text1 {
+			font-size:20px;
+			color:#02023f;
+		}
+		
+		.text2{
+			font-size:18px;
+			color:black;
+		}
+		
+		
+		a{
+			text-decoration:none;
+			color:white;
+			font-size:18px;
+			padding: 0px 3px;
+		}
+		
+	</style>
+
+</body>
+</html>

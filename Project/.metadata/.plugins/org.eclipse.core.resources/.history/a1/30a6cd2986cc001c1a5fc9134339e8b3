@@ -1,0 +1,239 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create an Account</title>
+</head>
+<body>
+	<div class = "center" >
+	<h2 align = "center"> <u> Registration Form </u> </h2> <br><br><br>
+	<form action="insert" method="post" onsubmit = "checkPassword()">
+		<div class = "form">
+		<label> Name  </label>  
+		<input type="text" name="name" required><br><br><br>
+		<label> E-mail Address  </label>  
+		<input type="text" name="email" pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder = "abc123@gmail.com" required><br><br><br>
+		<label> Telephone Number  </label>  
+		<input type="text" name="phone" pattern = "[0-9]{10}" placeholder = "xxxxxxxxxx" required><br><br><br>
+		<label> National Identity Number  </label> 
+		<input type="text" name="nic" placeholder = "xxxxxxxxxV/xxxxxxxxxxxx" required><br><br><br>
+		<label> User Name  </label> 
+		<input type="text" name="uname" required><br><br><br>
+		<label> Password  </label> 
+		<input type = "password" name = "pwd" id = "pwd" pattern = "(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,20}" title = "Must contain at least one number , one uppercase and lowercase letter, and at least 8 or more characters" required ><br>
+		
+		<div id="message">
+		  <h3>Password must contain the following:</h3>
+		  <ul>
+		  <li id="letter" class="invalid">A <b>Lowercase</b> Letter</li>
+		  <li id="capital" class="invalid">A <b>Capital (uppercase)</b> Letter</li>
+		  <li id="number" class="invalid">A <b>Number</b></li>
+		  <li id="length" class="invalid">Minimum <b>8 Characters</b></li>
+		  </ul>
+		</div> <br> <br> 
+	
+		<label for = "confirmpassword"> Confirm Password  </label>  
+		<input type = "password" name = "conpwd" id = "cpwd" required> <br> <br> <br> <br> 
+		
+		<div align = "center">
+		<input type="submit" name="submit" value="CREATE MY ACCOUNT"> <br><br>
+		<hr>
+		<br>
+		<p class="text"> <b> Already have an account ?  <span> <a href="login.jsp" class="text1"> Login </a> </span>  here </b> </p>
+		</div>
+		</div>
+	</form>
+	</div>
+	<br> <br>
+
+	<script>
+	var myInput = document.getElementById("pwd");
+	var letter = document.getElementById("letter");
+	var capital = document.getElementById("capital");
+	var number = document.getElementById("number");
+	var length = document.getElementById("length");
+
+	myInput.onfocus = function() 
+	{
+	  document.getElementById("message").style.display = "block";
+	}
+
+	myInput.onblur = function() 
+	{
+	  document.getElementById("message").style.display = "none";
+	}
+
+	myInput.onkeyup = function() 
+	{
+	  var lowerCaseLetters = /[a-z]/g;
+	  if(myInput.value.match(lowerCaseLetters)) 
+	  {  
+		letter.classList.remove("invalid");
+		letter.classList.add("valid");
+	  } 
+	  else 
+	  {
+		letter.classList.remove("valid");
+		letter.classList.add("invalid");
+	  }
+	  
+	  var upperCaseLetters = /[A-Z]/g;
+	  if(myInput.value.match(upperCaseLetters)) 
+	  {  
+		capital.classList.remove("invalid");
+		capital.classList.add("valid");
+	  } 
+	  else
+	  {
+		capital.classList.remove("valid");
+		capital.classList.add("invalid");
+	  }
+
+	  var numbers = /[0-9]/g;
+	  if(myInput.value.match(numbers)) 
+	  {  
+		number.classList.remove("invalid");
+		number.classList.add("valid");
+	  } 
+	  else 
+	  {
+		number.classList.remove("valid");
+		number.classList.add("invalid");
+	  }
+	  
+	  if(myInput.value.length >= 8) 
+	  {
+		length.classList.remove("invalid");
+		length.classList.add("valid");
+	  } 
+	  else 
+	  {
+		length.classList.remove("valid");
+		length.classList.add("invalid");
+	  }
+	}
+	
+	function checkPassword()
+	{
+		var password = document.getElementById("pwd").value;
+		var confirmpassword = document.getElementById("conpwd").value; 
+		
+		if(password == confirmpassword)
+		{
+			alert("Account has Successfully Created!");
+			return true;
+		}	
+		else
+		{
+			alert("Password Mismatch");
+			
+		}	
+	}
+
+
+	</script>
+	
+	<style>
+		body{
+			background-image:url("images/image2.jpg");
+			background-size:cover;
+			background-position:center;
+		}
+		
+		.center-box {
+			width:500px;
+			height:420px;
+			background:rgba(0 , 0 , 0 , 0 ,5);
+			color:#fff;
+			top:50%;
+			left:50%;
+			position:absolute;
+			transform:translate(-50% , -50%);
+			box-sizing:border-box;
+		}
+		
+		#message {
+		  display:none;
+		  background: #f1f1f1;
+		  color: #000;
+		  position: relative;
+		  padding: 20px;
+		  margin-top: 10px;
+		}
+		
+		#message li {
+		  padding: 10px 35px;
+		  font-size: 18px;
+		}
+		
+		.valid {
+		  color: green;
+		}
+		
+		.valid:before .invalid:before {
+		  position: relative;
+		  left: -35px;
+		}
+		
+		.invalid {
+		  color: red;
+		}
+		
+		.text {
+			font-size:20px;
+			color:black;
+			display:inline-block;
+		}
+			
+		.text1 {
+			font-size:18px;
+			color:#02023f;
+		}
+		
+		label{
+			font-size:20px;
+			font-weight:bold;
+			grid-row:auto;
+		}
+		
+		input[type = "text"] , [type = "password"]
+		{
+			width : 50% ;
+			padding: 4px ;
+			float:right;
+			font-size:14px;
+		}
+		
+		
+		input[type = "submit"] {
+		  background-color: #04AA6D;
+		  color: white;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  width: 40%;
+		  font-size:15px;
+		}
+		
+				
+		a{
+			text-decoration:none;
+			color:white;
+			font-size:18px;
+			padding: 0px 3px;
+		}
+		
+		body{
+			backgroung-image:url("image1.jpg");
+		}
+		
+		
+	</style>
+
+</body>
+</html>
+
+	
